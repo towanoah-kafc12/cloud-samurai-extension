@@ -19,8 +19,9 @@
 1. `docs/BOOTSTRAP.md` でゴール、スコープ、未確定事項を整理する
 2. `docs/TECH-STACK.md` で技術選定と検証方法を決める
 3. `docs/DELIVERY.md` で AI の完了条件と停止条件を明確にする
-4. 未確定事項は `docs/tracking/common/QUESTIONS.md` に記録する
-5. 実装や設計変更が入ったら `docs/PROJECT.md` と `docs/ARCHITECTURE.md` の改訂履歴を更新する
+4. `docs/TASKS.md` で work package、実行順、入力、成果物、検証、完了条件を定義する
+5. 未確定事項は `docs/tracking/common/QUESTIONS.md` に記録する
+6. 実装や設計変更が入ったら `docs/PROJECT.md` と `docs/ARCHITECTURE.md` の改訂履歴を更新する
 
 全部を最初から完璧に決めなくてもよくて、足りない部分は「仮説」か「未確定」として管理する前提だ。
 
@@ -42,7 +43,7 @@
 - `docs/SKILLS.md`: 標準 skill と project skill の一覧、追加ルール
 - `docs/PROJECT.md`: 目的、スコープ、成功条件
 - `docs/ARCHITECTURE.md`: 構成、責務、運用観点
-- `docs/TASKS.md`: 直近タスクの管理
+- `docs/TASKS.md`: work package 単位の実行ボード、優先順位、依存関係、完了条件
 - `docs/tracking/`: 不具合と不明点の一覧管理
 - `skills/`: 長い手順や専門知識の置き場
 - `skills/INDEX.md`: 作業と skill の対応をすぐ引くための索引
@@ -55,5 +56,6 @@
 
 このテンプレートは、実装そのものより運用の型を先に作る設計だ。
 技術が確定したら、`scripts/` の中身と `docs/TECH-STACK.md` の検証定義を一致させていく。
+実装に入ったら、`docs/TASKS.md` の work package を作業単位、レビュー単位、Git checkpoint の候補として扱う。
 定型作業が見えてきたら、repo に同梱した `skill-creator` を使って Skill 化し、`docs/SKILLS.md` に登録する前提にしている。
 そのときは `skills/INDEX.md` と `AGENTS.md` も同じ変更で更新する。

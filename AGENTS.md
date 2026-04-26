@@ -11,21 +11,27 @@
 作業開始時は次の順で確認すること。
 
 1. `README.MD`
-2. `docs/BOOTSTRAP.md`
-3. `docs/TECH-STACK.md`
-4. `docs/DELIVERY.md`
-5. `docs/SKILLS.md`
-6. `skills/INDEX.md`
-7. `docs/PROJECT.md`
-8. `docs/ARCHITECTURE.md`
-9. `docs/TASKS.md`
+2. `docs/DELIVERY.md`
+3. `docs/TASKS.md`
+4. `docs/BOOTSTRAP.md`
+5. `docs/TECH-STACK.md`
+6. `docs/SKILLS.md`
+7. `skills/INDEX.md`
+8. `docs/PROJECT.md`
+9. `docs/ARCHITECTURE.md`
 
+作業選択は `docs/TASKS.md` の work package を起点にする。
 変更対象に応じて `docs/tracking/` と関連する `skills/` も確認すること。
 
 ## Working Rules
 
 - 変更前に対象範囲と方針を短く整理する
-- 未確定事項が残るなら、推測で埋めず `docs/tracking/*/QUESTIONS.md` に記録する
+- `docs/TASKS.md` に `In Progress` の work package があれば、それを最優先で閉じる
+- `In Progress` がなければ、`Ready` かつ優先度が最も高い work package を 1 つ選ぶ
+- 選んだ work package の `Inputs`、`Dependencies`、`Blockers`、`Done condition` を確認してから作業する
+- 未確定事項が残るなら、進めてよい仮説か停止すべきブロッカーかを分ける
+- 停止すべき未確定事項は、推測で埋めず `docs/tracking/*/QUESTIONS.md` に記録する
+- 作業完了時は、該当 work package の成果物、検証結果、次に解放される work package を確認する
 - 不要な大規模リファクタや無関係な整形はしない
 - 既存の命名規則と責務分離を尊重する
 - 依存関係の追加は最小限にする
@@ -35,6 +41,22 @@
 - 同じ種類の作業説明や手順が繰り返されるなら、Skill 化候補として扱う
 - Skill を新規作成または更新するときは、repo 標準搭載の `skills/skill-creator/SKILL.md` を使う前提で進める
 - Skill を新規作成、更新、廃止するときは `AGENTS.md` の Skills 節も同じ変更で更新する
+
+## Git Workflow
+
+- work package が意味のある単位で完了したら commit 候補として扱う
+- commit 前に `git status` で対象を確認し、一時ファイル、生成物、秘密情報を含めない
+- commit 粒度は原則として 1 work package、または強く関連する docs 更新を含む 1 まとまりにする
+- push、branch 作成、PR 作成は、ユーザー明示要求または共有・レビューの節目で行う
+- deploy、force push、履歴改変は明示要求なしに行わない
+
+## AGENTS.md Maintenance
+
+- PJ 固有の判断が 2 回以上繰り返されたら、常設ルールに昇格するか検討する
+- 新しい docs、tracking、skills が作業開始時の必読になったら Read Order を更新する
+- 初期テンプレートの一般論が現行 PJ の実態とずれたら、削るか PJ 固有ルールへ置き換える
+- 一時的な task、未確定事項、実装メモは `AGENTS.md` に置かず、`docs/TASKS.md` または `docs/tracking/` に置く
+- `AGENTS.md` は短く保ち、詳細手順は `docs/*` または `skills/*` に逃がす
 
 ## Validation Rules
 
