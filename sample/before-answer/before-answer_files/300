@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Samurai | AWS認定試験 問題集 全13科目対応 図解と丁寧な解説付き</title>
+  <meta name="description" content="AWS認定全13科目対応の問題集。2,400問以上収録し全問に構成図と不正解理由の解説付きで理解が深まる。" />
+  <meta name="keywords"
+    content="AWS認定試験,AWS資格,問題集,試験対策,図解,Cloud Practitioner,Solutions Architect,SAA,SAP,DVA,DOP,SCS,ANS,MLS,DEA,AIF,MLA,COE,GAP" />
+  <meta name="author" content="Cloud Samurai" />
+  <meta property="og:title" content="AWS認定試験 問題集 全13科目対応 図解+不正解理由で理解が深まる | Cloud Samurai" />
+  <meta property="og:description" content="AWS認定全13科目対応の問題集。2,400問以上収録し全問に構成図と不正解理由の解説付きで理解が深まる。" />
+  <meta property="og:image" content="https://cloudzamurai.com/logo.png" />
+  <meta property="og:url" content="https://cloudzamurai.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cloud Samurai" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AWS認定試験 問題集 全13科目対応 図解+不正解理由で理解が深まる | Cloud Samurai" />
+  <meta name="twitter:description" content="AWS認定全13科目対応の問題集。2,400問以上収録し全問に構成図と不正解理由の解説付きで理解が深まる。" />
+  <meta name="twitter:image" content="https://cloudzamurai.com/logo.png" />
+
+  <!-- 構造化データ - サイト名とロゴ -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Cloud Samurai",
+      "alternateName": "Cloud Samurai - AWS認定試験 問題集",
+      "url": "https://cloudzamurai.com",
+      "description": "AWS認定の全13科目に対応した問題集。2,400問以上を収録し、全問に図解と不正解理由の解説付き。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cloud Samurai",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cloudzamurai.com/logo.png"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://cloudzamurai.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="[REDACTED_CONN_STRING]://300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNEGWKQSD6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-GNEGWKQSD6');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1411019908334855"
+    crossorigin="anonymous"></script>
+  <script type="module" crossorigin src="/assets/index-u7B-hkLC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DsmlRqsQ.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>

@@ -52,15 +52,15 @@
 | Field | Value |
 | --- | --- |
 | Phase | bootstrap |
-| Status | Ready |
+| Status | Done |
 | Priority | P0 |
 | Objective | PJ の目的、スコープ、成功条件を実装前に最低限決める |
 | Inputs | `README.MD`, `docs/BOOTSTRAP.md`, ユーザー要件 |
 | Files to touch | `docs/PROJECT.md`, `docs/tracking/common/QUESTIONS.md` |
 | Outputs | Goal, Non-Goals, Users, Scope, Success Criteria の初期版 |
-| Validation | `docs/BOOTSTRAP.md` の Bootstrap Checklist と照合する |
+| Validation | `docs/BOOTSTRAP.md` の Bootstrap Checklist と照合済み |
 | Dependencies | なし |
-| Blockers | Goal / In Scope / Out of Scope が一文でも書けない |
+| Blockers | なし |
 | Done condition | 実装対象と対象外が分かり、未確定事項が `QUESTIONS.md` に逃がされている |
 | Git checkpoint | Done になったら docs-only commit 候補 |
 
@@ -69,15 +69,15 @@
 | Field | Value |
 | --- | --- |
 | Phase | bootstrap |
-| Status | Ready |
+| Status | Done |
 | Priority | P0 |
 | Objective | app / infra の仮技術と検証入口を決める |
 | Inputs | `docs/PROJECT.md`, `docs/BOOTSTRAP.md`, ユーザー要件 |
 | Files to touch | `docs/TECH-STACK.md`, `scripts/lint.sh`, `scripts/test.sh`, `docs/tracking/common/QUESTIONS.md` |
-| Outputs | 技術候補、採用理由、未確定事項、仮の lint/test コマンド |
+| Outputs | Chrome Extension MV3、local Node.js bridge、Codex app-server、MVP では infra なしの技術候補 |
 | Validation | `./scripts/lint.sh` と `./scripts/test.sh` が実行入口として存在することを確認する |
 | Dependencies | WP-COM-001 |
-| Blockers | 技術候補を 1 つも置けない |
+| Blockers | なし |
 | Done condition | 技術が未確定でも、次に検証すべき候補とコマンド入口が分かる |
 | Git checkpoint | Done になったら commit 候補 |
 
@@ -86,16 +86,16 @@
 | Field | Value |
 | --- | --- |
 | Phase | design |
-| Status | Ready |
+| Status | Done |
 | Priority | P1 |
 | Objective | アプリケーションの種類、責務、外部入出力を定義する |
 | Inputs | `docs/PROJECT.md`, `docs/TECH-STACK.md`, `docs/ARCHITECTURE.md` |
 | Files to touch | `docs/ARCHITECTURE.md`, `docs/tracking/app/QUESTIONS.md` |
-| Outputs | app の責務、主要コンポーネント、外部サービス、未確定事項 |
-| Validation | `docs/PROJECT.md` の In Scope と矛盾しないことを確認する |
+| Outputs | Chrome 拡張、local Node.js bridge、Codex app-server 連携の責務と MVP flow |
+| Validation | `docs/PROJECT.md` の In Scope と矛盾しないことを確認済み |
 | Dependencies | WP-COM-001, WP-COM-002 |
-| Blockers | アプリの種類または主要責務が決まらない |
-| Done condition | app 配下で最初に作るファイルまたはモジュールの候補が分かる |
+| Blockers | なし |
+| Done condition | app 配下で Chrome 拡張と bridge を作る方針が分かる |
 | Git checkpoint | Done になったら commit 候補 |
 
 ### WP-INF-001: Infra responsibility design
@@ -103,16 +103,16 @@
 | Field | Value |
 | --- | --- |
 | Phase | design |
-| Status | Ready |
+| Status | Done |
 | Priority | P1 |
 | Objective | AWS / IaC の責務と環境方針を定義する |
 | Inputs | `docs/PROJECT.md`, `docs/TECH-STACK.md`, `docs/ARCHITECTURE.md` |
 | Files to touch | `docs/ARCHITECTURE.md`, `docs/tracking/infra/QUESTIONS.md` |
-| Outputs | infra の責務、主要 AWS リソース候補、環境差分、未確定事項 |
-| Validation | `docs/PROJECT.md` の Constraints と矛盾しないことを確認する |
+| Outputs | MVP では AWS / IaC を持たない方針 |
+| Validation | `docs/PROJECT.md` の Constraints と矛盾しないことを確認済み |
 | Dependencies | WP-COM-001, WP-COM-002 |
-| Blockers | AWS を使う範囲または IaC 方針が決まらない |
-| Done condition | infra 配下で最初に作るファイルまたはスタックの候補が分かる |
+| Blockers | なし |
+| Done condition | infra 配下では初期実装しないことが分かる |
 | Git checkpoint | Done になったら commit 候補 |
 
 ### WP-APP-002: App implementation slice
@@ -120,15 +120,15 @@
 | Field | Value |
 | --- | --- |
 | Phase | implementation |
-| Status | Blocked |
+| Status | Ready |
 | Priority | P1 |
 | Objective | 最小の app 実装単位を追加する |
-| Inputs | `docs/PROJECT.md`, `docs/ARCHITECTURE.md`, `docs/TECH-STACK.md`, WP-APP-001 の成果 |
-| Files to touch | `app/`, `docs/ARCHITECTURE.md`, `docs/tracking/app/BUGS.md`, `docs/tracking/app/QUESTIONS.md` |
-| Outputs | 最小実装、関連 docs 更新、必要な tracking 更新 |
-| Validation | `./scripts/lint.sh` と `./scripts/test.sh`、または `docs/TECH-STACK.md` に定義された app 検証 |
+| Inputs | `docs/PROJECT.md`, `docs/ARCHITECTURE.md`, `docs/TECH-STACK.md`, WP-APP-001 の成果, `sample/after-answer/after-answer.html` |
+| Files to touch | `app/`, `scripts/lint.sh`, `scripts/test.sh`, `docs/ARCHITECTURE.md`, `docs/tracking/app/BUGS.md`, `docs/tracking/app/QUESTIONS.md` |
+| Outputs | Chrome 拡張 MVP、local bridge MVP、関連 docs 更新、必要な tracking 更新 |
+| Validation | `./scripts/lint.sh` と `./scripts/test.sh`、sample HTML での抽出確認、可能なら Chrome 手動確認 |
 | Dependencies | WP-APP-001 |
-| Blockers | app の責務、技術、検証方法が未定義 |
+| Blockers | Codex app-server のローカル起動方法、localhost bridge の許可範囲、解説 UI 配置が未決 |
 | Done condition | 変更対象の実装が動き、関連検証と docs 更新が完了している |
 | Git checkpoint | Done になったら 1 work package = 1 commit を基本にする |
 
@@ -170,3 +170,7 @@
 
 - テンプレート構成の基本方針を決定した
 - 課題管理と設計改訂の連携ルールを追加した
+- WP-COM-001: Cloud Samurai 解説生成拡張の目的、スコープ、成功条件を定義した
+- WP-COM-002: Chrome Extension MV3、local Node.js bridge、Codex app-server の技術候補を定義した
+- WP-APP-001: Chrome 拡張と local bridge の責務と MVP flow を定義した
+- WP-INF-001: MVP では AWS / IaC を使わない方針を定義した

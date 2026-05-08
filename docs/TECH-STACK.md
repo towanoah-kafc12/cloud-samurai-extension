@@ -7,19 +7,20 @@
 
 ## Current Status
 
-- App Stack: TBD
-- Infra Stack: TBD
+- App Stack: Chrome Extension MV3 + local Node.js bridge + Codex app-server
+- Infra Stack: None for MVP
 - CI/CD: TBD
-- Deployment Target: TBD
+- Deployment Target: Local development / unpacked Chrome extension
 
 ## Decision Table
 
 | Area | Decision | Status | Rationale | Validation Entry Point |
 | --- | --- | --- | --- | --- |
-| App | TBD | Proposed | 未確定 | `./scripts/lint.sh`, `./scripts/test.sh` |
-| Infra | TBD | Proposed | 未確定 | `./scripts/lint.sh` |
-| CI/CD | TBD | Proposed | 未確定 | `./scripts/test.sh` |
-| Deploy | TBD | Proposed | 未確定 | `./scripts/deploy.sh` |
+| App | Chrome Extension MV3 + local Node.js bridge | Proposed | content script で Cloud Samurai DOM を抽出し、Codex app-server とは stdio 接続可能なローカル bridge で連携する | `./scripts/lint.sh`, `./scripts/test.sh` |
+| AI Runtime | Codex app-server | Proposed | ユーザー要件。ブラウザから stdio 直結できないため bridge 経由を前提にする | `./scripts/test.sh` |
+| Infra | なし | Proposed | 初期 MVP はローカル実行のみで、AWS や公開バックエンドを作らない | `./scripts/lint.sh` |
+| CI/CD | TBD | Proposed | 初期実装後に npm scripts と合わせて決める | `./scripts/test.sh` |
+| Deploy | Chrome の unpacked extension とローカル bridge 起動 | Proposed | まず手元で動く検証を優先し、公開配布や本番デプロイは対象外にする | `./scripts/deploy.sh` |
 
 `Status` は `Proposed`, `Trial`, `Adopted`, `Rejected` を使う。
 
@@ -27,15 +28,16 @@
 
 ### App
 
-- lint: コード規約と静的検査
-- test: 単体テストまたは統合テスト
-- build: 必要ならビルド確認
+- lint: 初期実装前はテンプレート入口確認のみ。実装後は Chrome 拡張と bridge の静的検査に置き換える
+- test: 初期実装前はテンプレート入口確認のみ。実装後は sample HTML からの抽出テストと bridge の正常系テストを追加する
+- build: 実装後に Chrome MV3 の配布物を生成できることを確認する
+- manual: UI 変更時は Chrome に unpacked extension を読み込み、Cloud Samurai または `sample/after-answer/after-answer.html` 相当の画面でボタン表示、抽出、解説表示を確認する
 
 ### Infra
 
-- lint: 例として `cfn-lint` や IaC 固有の linter
-- validate: テンプレートや構文の妥当性確認
-- plan: 差分確認
+- lint: MVP では対象外。AWS/IaC を導入するまではテンプレート入口確認のみ
+- validate: MVP では対象外
+- plan: MVP では対象外
 
 ## Open Questions
 
@@ -46,3 +48,4 @@
 | Date | Version | Summary | Related IDs |
 | --- | --- | --- | --- |
 | 2026-04-11 | 0.1 | 技術選定と検証入口の管理テンプレートを追加 | - |
+| 2026-05-08 | 0.2 | Chrome 拡張、ローカル bridge、Codex app-server の MVP 技術候補を追加 | Q-COM-001, Q-APP-001, Q-INF-001 |
